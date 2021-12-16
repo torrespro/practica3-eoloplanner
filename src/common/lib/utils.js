@@ -11,3 +11,9 @@ export function toUpperCase(value) {
     return value.toUpperCase();
   else return value.toLowerCase();
 }
+
+export function getRandomArbitrary(min, max) {
+  const delay = Math.random() * (max - min) + min
+  console.log(delay)
+  return delay;
+}

@@ -1,9 +1,0 @@
-{
-  "name": "grpc-weatherservice-server",
-  "version": "1.0.0",
-  "type": "module",
-  "dependencies": {
-    "@grpc/proto-loader": "0.5.3",
-    "@grpc/grpc-js": "1.4.4"
-  }
-}

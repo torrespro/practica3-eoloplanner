@@ -2,15 +2,15 @@ import express from 'express';
 import cors from 'cors';
 import { graphqlHTTP } from 'express-graphql';
 import path from 'path';
-const __dirname = path.resolve();
 import { credentials } from '@grpc/grpc-js';
 import { WeatherService } from './proto.js';
 import { promisify } from 'util';
 import fetch from 'node-fetch';
-import { EolPlant } from './database.js';
+import { EolPlant } from '../database.js';
 import { schema } from './schema.js';
-import { toPlainObj, toUpperCase } from './utils.js';
+import { toPlainObj, toUpperCase } from '../../common/lib/utils.js';
 
+const __dirname = path.resolve();
 const topographicServiceURL = "http://localhost:8080/api/v1/topographicdetails/";
 
 var weatherService = new WeatherService('localhost:9090', credentials.createInsecure());
