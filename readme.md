@@ -1,6 +1,6 @@
 # Práctica 3. Protocolos y reactividad
 
-Aplicación distribuida para la generación de plantas eólicas.
+Aplicación distribuida para la generación de plantas eólicas. Más documentación [aqui](./docs.pdf).
 
 ## Install
 

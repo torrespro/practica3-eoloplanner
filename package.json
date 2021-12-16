@@ -4,8 +4,8 @@
   "description": "Aplicación distribuida para la generación de plantas eólicas",
   "main": "exec.js",
   "scripts": {    
-    "weatherservice": "node weatherservice/src/server.js",    
-    "server": "node server/src/server.js",
+    "weatherservice": "node src/weatherservice/server.js",    
+    "server": "node src/server/server.js",
     "mongodb":  "docker run --rm -d -p 27017-27019:27017-27019 --name mongodb mongo",
     "mysql" : "docker run --rm -d -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=eoloplantsDB -p3306:3306 --name mysql mysql:8.0.22"
   },
