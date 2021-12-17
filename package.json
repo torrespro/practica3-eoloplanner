@@ -1,0 +1,37 @@
+{
+  "name": "practica3-eoloplanner",
+  "version": "1.0.0",
+  "description": "Aplicación distribuida para la generación de plantas eólicas",
+  "main": "exec.js",
+  "scripts": {
+    "weatherservice": "node weatherservice/src/server.js",
+    "server": "node server/src/server.js",
+    "mongodb": "docker run --rm -d -p 27017-27019:27017-27019 --name mongodb mongo",
+    "mysql": "docker run --rm -d -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=eoloplantsDB -p3306:3306 --name mysql mysql:8.0.22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torrespro/practica3-eoloplanner.git"
+  },
+  "author": "Andrés Torres",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torrespro/practica3-eoloplanner/issues"
+  },
+  "homepage": "https://github.com/torrespro/practica3-eoloplanner#readme",
+  "dependencies": {
+    "@grpc/proto-loader": "0.5.3",
+    "@grpc/grpc-js": "1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "mysql2": "2.3.3",
+    "path": "^0.12.7",
+    "sequelize": "5.22.4",
+    "node-fetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

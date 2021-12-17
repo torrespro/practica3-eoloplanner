@@ -1,4 +1,4 @@
-package es.codeurjc.users;
+package es.torres.topographicdetails;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;

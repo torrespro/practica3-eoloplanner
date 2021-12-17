@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "20836fb7-419c-40f0-a6a5-93c210f1cc29",
+		"name": "Practica 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Eolic Plants",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\n   getEolicPlants {\n    id\n    city\n    planning\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get Eolic Plants",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n   getEolicPlants {\n    id\n    city\n    planning\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "470"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Dec 2021 11:35:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"getEolicPlants\": [\n            {\n                \"id\": \"1\",\n                \"city\": \"Madrid\",\n                \"planning\": \"madrid-sunny-flat\"\n            },\n            {\n                \"id\": \"2\",\n                \"city\": \"Toledo\",\n                \"planning\": \"TOLEDO-FLAT-SUNNY\"\n            },\n            {\n                \"id\": \"3\",\n                \"city\": \"Vitoria\",\n                \"planning\": \"VITORIA-MOUNTAIN-SUNNY\"\n            },\n            {\n                \"id\": \"4\",\n                \"city\": \"Valencia\",\n                \"planning\": \"VALENCIA-SUNNY-MOUNTAIN\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "create Eolic Plant",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n   createEolicPlant(eolicPlantInput:{city:\"Aviles\"}) {\n    city\n    planning\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "470"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Dec 2021 11:35:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"getEolicPlants\": [\n            {\n                \"id\": \"1\",\n                \"city\": \"Madrid\",\n                \"planning\": \"madrid-sunny-flat\"\n            },\n            {\n                \"id\": \"2\",\n                \"city\": \"Toledo\",\n                \"planning\": \"TOLEDO-FLAT-SUNNY\"\n            },\n            {\n                \"id\": \"3\",\n                \"city\": \"Vitoria\",\n                \"planning\": \"VITORIA-MOUNTAIN-SUNNY\"\n            },\n            {\n                \"id\": \"4\",\n                \"city\": \"Valencia\",\n                \"planning\": \"VALENCIA-SUNNY-MOUNTAIN\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "delete Eolic Plant",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n   deleteEolicPlant(id:5) \n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Dec 2021 11:42:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"deleteEolicPlant\": \"5\"\n    }\n}"
+				}
+			]
+		}
+	]
+}

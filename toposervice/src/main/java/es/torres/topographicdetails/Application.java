@@ -1,4 +1,4 @@
-package es.codeurjc.users;
+package es.torres.topographicdetails;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

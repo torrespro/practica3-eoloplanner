@@ -8,7 +8,7 @@ $(document).ready(function () {
 
 
 async function getAll() {
-    const query = "{ getEvents {id city planning} }";
+    const query = "{ getEolicPlants {id city planning} }";
     const response = await fetch('http://localhost:3000/graphql', {
         method: 'POST',
         headers: {
@@ -21,19 +21,20 @@ async function getAll() {
     let result = await response.json();    
     let list = $("#myList").empty();
 
-    result.data.getEvents.forEach((item)=>{
+    result.data.getEolicPlants.forEach((item)=>{
         list.append('<li class="list-group-item">'+item.city + " " + item.planning+'</li>');
     })
     
     $("#spinner").hide();
     $("#btnFetch").prop("disabled",false);
     $("#btnFetch").text("Add");
+    $("#fname").val("").focus();
 }
 
 
 async function insert(city)  {
-    var query = `mutation CreateEvent($eventInput: EventInput) {
-      createEvent(eventInput: $eventInput) {
+    var query = `mutation CreateEolicPlant($EolicPlantInput: EolicPlantInput) {
+      createEolicPlant(eolicPlantInput: $EolicPlantInput) {
         city
       }
     }`;
@@ -47,7 +48,7 @@ async function insert(city)  {
         body: JSON.stringify({
             query,
             variables: {
-                eventInput: {
+                EolicPlantInput: {
                     city,
               }
             }

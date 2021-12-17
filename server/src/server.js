@@ -7,7 +7,7 @@ import { credentials } from '@grpc/grpc-js';
 import { WeatherService } from './proto.js';
 import { promisify } from 'util';
 import fetch from 'node-fetch';
-import { EolPlant } from './database.js';
+import { EolicPlant } from './database.js';
 import { schema } from './schema.js';
 import { toPlainObj, toUpperCase } from './utils.js';
 
@@ -18,12 +18,12 @@ weatherService.GetWeather = promisify(weatherService.GetWeather.bind(weatherServ
 
 // The root provides a resolver function for each API endpoint
 const root = {
-  getEvents: async (parent, args, context, info) => {
-    const rows = await EolPlant.findAll();
+  getEolicPlants: async (parent, args, context, info) => {
+    const rows = await EolicPlant.findAll();
     return toPlainObj(rows);
   },
-  createEvent: async (parent, args, context, info) => {
-    const city = parent.eventInput.city.trim().replace(/^\w/, (c) => c.toUpperCase());
+  createEolicPlant: async (parent, args, context, info) => {
+    const city = parent.eolicPlantInput.city.trim().replace(/^\w/, (c) => c.toUpperCase());
     var planning = city;
     var tasks = [
       (async () => {
@@ -38,14 +38,14 @@ const root = {
 
     await Promise.all(tasks);
 
-    const planta = await EolPlant.create({ city: city, planning: toUpperCase(planning)});
-    console.log('Customer inserted with id:', planta.id);
-    const rows = EolPlant.findAll({ where: { 'id': planta.id } });
+    const planta = await EolicPlant.create({ city: city, planning: toUpperCase(planning)});
+    console.log('EolicPlant inserted with id:', planta.id);
+    const rows = EolicPlant.findAll({ where: { 'id': planta.id } });
     return rows;
   },
-  deleteEvent: async (parent, args, context, info) => {
+  deleteEolicPlant: async (parent, args, context, info) => {
     const id = parent.id;
-    await EolPlant.destroy({ where: { id } });
+    await EolicPlant.destroy({ where: { id } });
     return id;
   },
 };

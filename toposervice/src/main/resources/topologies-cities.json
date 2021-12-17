@@ -1,0 +1,58 @@
+[ {
+  "id" : "Avilés",
+  "landscape" : "flat"
+}, {
+  "id" : "Barcelona",
+  "landscape" : "flat"
+}, {
+  "id" : "Jaca",
+  "landscape" : "mountain"
+}, {
+  "id" : "Andorra",
+  "landscape" : "mountain"
+}, {
+  "id" : "Toledo",
+  "landscape" : "mountain"
+}, {
+  "id" : "Madrid",
+  "landscape" : "flat"
+}, {
+  "id" : "Sevilla",
+  "landscape" : "flat"
+}, {
+  "id" : "Murcia",
+  "landscape" : "mountain"
+}, {
+  "id" : "Palma",
+  "landscape" : "mountain"
+}, {
+  "id" : "Málaga",
+  "landscape" : "flat"
+}, {
+  "id" : "Alicante",
+  "landscape" : "flat"
+}, {
+  "id" : "Bilbao",
+  "landscape" : "mountain"
+}, {
+  "id" : "Córdoba",
+  "landscape" : "flat"
+}, {
+  "id" : "Valladolid",
+  "landscape" : "flat"
+}, {
+  "id" : "Vigo",
+  "landscape" : "flat"
+}, {
+  "id" : "Gijón",
+  "landscape" : "mountain"
+}, {
+  "id" : "Vitoria",
+  "landscape" : "mountain"
+}, {
+  "id" : "Valencia",
+  "landscape" : "flat"
+}, {
+  "id" : "Zaragoza",
+  "landscape" : "flat"
+} ]

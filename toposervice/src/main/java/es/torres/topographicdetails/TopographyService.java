@@ -1,4 +1,4 @@
-package es.codeurjc.users;
+package es.torres.topographicdetails;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -37,9 +37,9 @@ public class TopographyService {
                     HttpStatus.NOT_FOUND, "City with name "+city+" not found")));
     }
 
-    public Mono<Topography> deleteCity(String id) {
-        Mono<Topography> deletedCity = topographyRepository.findById(id);
-        return deletedCity.flatMap(city -> topographyRepository.deleteById(id).then(Mono.just(city)));
+    public Mono<Topography> deleteCity(String cityName) {
+        Mono<Topography> deletedCity = topographyRepository.findOne(Example.of(new Topography(null, cityName, null)));
+        return deletedCity.flatMap(city -> topographyRepository.deleteById(city.getId()).then(Mono.just(city)));
     }
 
     @PostConstruct

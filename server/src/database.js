@@ -6,16 +6,16 @@ const sequelize = new Sequelize('eoloplantsDB', 'root', 'password', {
   dialect: 'mysql'
 });
 
-export class EolPlant extends Model { }
+export class EolicPlant extends Model { }
 
-  EolPlant.init({
+  EolicPlant.init({
     city: DataTypes.STRING,
     planning: DataTypes.STRING
-  }, { sequelize, modelName: 'eolplant' });
+  }, { sequelize, modelName: 'eolicplant' });
   
   await sequelize.sync({ force: true });
 
-  await EolPlant.create({
+  await EolicPlant.create({
     city: 'Madrid',
     planning: 'madrid-sunny-flat'
   });

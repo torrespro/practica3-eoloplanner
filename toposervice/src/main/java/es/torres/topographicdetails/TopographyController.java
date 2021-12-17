@@ -1,4 +1,4 @@
-package es.codeurjc.users;
+package es.torres.topographicdetails;
 
 import java.util.Optional;
 import java.util.Random;
@@ -25,15 +25,15 @@ public class TopographyController {
 
     Random random = new Random();
 
-    TopographyController(TopographyService userService) {
-        this.topographicService = userService;
+    TopographyController(TopographyService topographicService) {
+        this.topographicService = topographicService;
     }
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<TopographyDTO> createCity(@RequestBody Mono<TopographyDTO> city) {
         return city
-            .map(this::toCity)
+            .map(this::toTopography)
             .flatMap(topographicService::createCity)
             .map(this::toTopographyDTO);
     }
@@ -56,12 +56,12 @@ public class TopographyController {
     }
 
     @DeleteMapping("/{city}")
-    public Mono<TopographyDTO> deleteUser(@PathVariable String id) {
-        return topographicService.deleteCity(id).map(this::toTopographyDTO);
+    public Mono<TopographyDTO> deleteUser(@PathVariable String city) {
+        return topographicService.deleteCity(city).map(this::toTopographyDTO);
     }
 
-    private Topography toCity(TopographyDTO TopographyDTO) {
-        return new Topography(TopographyDTO.id(), TopographyDTO.id(), TopographyDTO.landscape());
+    private Topography toTopography(TopographyDTO TopographyDTO) {
+        return new Topography(TopographyDTO.id(), TopographyDTO.landscape());
     }
 
     private TopographyDTO toTopographyDTO(Topography topography) {
